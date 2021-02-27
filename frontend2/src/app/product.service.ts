@@ -32,32 +32,11 @@ export class ProductService {
 
 
   async getProducts(): Promise<any> {
-
-    const response = await this.http.get(this.productsUrl, {
-      headers: header,
-      observe: 'response'
-    }).toPromise();
-
-    return response.body;
+    return Products;
   }
 
 
   async getProduct(id: number): Promise<any> {
-
-    let actualUrl = this.productUrl + "?id=" + id;
-
-
-    const response = await this.http.get(actualUrl, {
-      headers: header,
-      observe: 'response'
-    }).toPromise();
-    //console.log(response.body);
-
-    return response.body;
+    return Products[id];
   }
-
-
-
-
-
 }
