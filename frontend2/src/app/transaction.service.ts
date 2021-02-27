@@ -20,16 +20,10 @@ export class TransactionService {
 
   constructor(private http: HttpClient) { }
 
-  private transactionUrl="http://localhost:16137/createTransaction";
-  
-  async createTransaction(transaction : any[]): Promise<any> {
+  async createTransaction(transaction: any[]): Promise<any> {
 
-    const response = await this.http.post(this.transactionUrl,transaction,{
-      headers: header,
-      observe: 'response'
-    }).toPromise();
+    console.log(transaction);
 
-    return response.body;
   }
 
 }
