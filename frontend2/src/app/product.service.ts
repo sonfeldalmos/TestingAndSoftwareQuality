@@ -24,17 +24,9 @@ export class ProductService {
 
   constructor(private messageService: MessageService, private http: HttpClient) { }
 
-  private productsUrl = "http://localhost:25052/api/getAllProductWithDiscount";
-
-  private productUrl = "http://localhost:25052/api/getProductById";
-
-
-
-
   async getProducts(): Promise<any> {
     return Products;
   }
-
 
   async getProduct(id: number): Promise<any> {
     return Products[id];
