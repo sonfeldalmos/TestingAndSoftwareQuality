@@ -1,0 +1,12 @@
+
+<h2>Check Out</h2>
+<h3>Selected Items:</h3>
+<ul class="products">
+  <li *ngFor="let product of productsToPurchase">
+      <span class="badge">Product Name:{{product.ProductName}}</span> Amount :{{product.AmountToPurchase}} Prize per Item :{{product.Prize}}
+      <button (click)="deleteItem(product.Id)">Delete</button>
+  </li>
+</ul>
+<h3>Toltal: {{this.total}}</h3>
+<button (click)="clearOrder()">Clear Order</button>
+<button (click)="sendOrder()">Send Order</button>

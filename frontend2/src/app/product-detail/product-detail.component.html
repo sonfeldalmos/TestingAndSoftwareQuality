@@ -1,0 +1,18 @@
+<div *ngIf="product">
+
+    <h2>{{product.ProductName | uppercase}}</h2>
+    <div><span>Name: </span>{{product.ProductName}}</div>
+    <div><span>Prize: </span>{{product.Prize}}</div>
+  
+    <div *ngIf="product.DiscountAmount>0">
+    <div><span>Discount beyond : </span>{{product.DiscountLimit}} item</div>
+    <div><span>Discount  </span>{{product.DiscountAmount}}%</div>
+    </div>
+    <div>
+      <label>Amount to purchase:
+        <input type="number" [(ngModel)]="this.amountToPurchase" />
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+    <button (click)="addToCard()">Add to card</button>
+  </div>
